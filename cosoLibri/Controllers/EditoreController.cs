@@ -10,16 +10,16 @@ using cosoLibri.Models;
 
 namespace cosoLibri.Controllers
 {
-    public class EditoresController : Controller
+    public class EditoreController : Controller
     {
         private readonly LibriDbContext _context;
 
-        public EditoresController(LibriDbContext context)
+        public EditoreController(LibriDbContext context)
         {
             _context = context;
         }
 
-        // GET: Editores s
+        // GET: Editore
         public async Task<IActionResult> Index()
         {
               return _context.Editores != null ? 
@@ -27,7 +27,7 @@ namespace cosoLibri.Controllers
                           Problem("Entity set 'LibriDbContext.Editores'  is null.");
         }
 
-        // GET: Editores/Details/5
+        // GET: Editore/Details/5
         public async Task<IActionResult> Details(uint? id)
         {
             if (id == null || _context.Editores == null)
@@ -45,13 +45,13 @@ namespace cosoLibri.Controllers
             return View(editore);
         }
 
-        // GET: Editores/Create
+        // GET: Editore/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Editores/Create
+        // POST: Editore/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -67,7 +67,7 @@ namespace cosoLibri.Controllers
             return View(editore);
         }
 
-        // GET: Editores/Edit/5
+        // GET: Editore/Edit/5
         public async Task<IActionResult> Edit(uint? id)
         {
             if (id == null || _context.Editores == null)
@@ -83,7 +83,7 @@ namespace cosoLibri.Controllers
             return View(editore);
         }
 
-        // POST: Editores/Edit/5
+        // POST: Editore/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -118,7 +118,7 @@ namespace cosoLibri.Controllers
             return View(editore);
         }
 
-        // GET: Editores/Delete/5
+        // GET: Editore/Delete/5
         public async Task<IActionResult> Delete(uint? id)
         {
             if (id == null || _context.Editores == null)
@@ -136,7 +136,7 @@ namespace cosoLibri.Controllers
             return View(editore);
         }
 
-        // POST: Editores/Delete/5
+        // POST: Editore/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(uint id)
