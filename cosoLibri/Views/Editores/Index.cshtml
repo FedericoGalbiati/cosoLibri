@@ -1,0 +1,83 @@
+﻿@model IEnumerable<cosoLibri.Models.Editore>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Via)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Civico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Città)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cap)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Provincia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Agente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Telefono)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SitoWeb)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Via)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Civico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Città)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cap)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Provincia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Agente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SitoWeb)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodiceEditore">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodiceEditore">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodiceEditore">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

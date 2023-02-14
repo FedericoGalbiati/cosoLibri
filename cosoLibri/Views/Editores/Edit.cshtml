@@ -1,0 +1,74 @@
+﻿@model cosoLibri.Models.Editore
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Editore</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodiceEditore" />
+            <div class="form-group">
+                <label asp-for="Nome" class="control-label"></label>
+                <input asp-for="Nome" class="form-control" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Via" class="control-label"></label>
+                <input asp-for="Via" class="form-control" />
+                <span asp-validation-for="Via" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Civico" class="control-label"></label>
+                <input asp-for="Civico" class="form-control" />
+                <span asp-validation-for="Civico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Città" class="control-label"></label>
+                <input asp-for="Città" class="form-control" />
+                <span asp-validation-for="Città" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cap" class="control-label"></label>
+                <input asp-for="Cap" class="form-control" />
+                <span asp-validation-for="Cap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Provincia" class="control-label"></label>
+                <input asp-for="Provincia" class="form-control" />
+                <span asp-validation-for="Provincia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Agente" class="control-label"></label>
+                <input asp-for="Agente" class="form-control" />
+                <span asp-validation-for="Agente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SitoWeb" class="control-label"></label>
+                <input asp-for="SitoWeb" class="form-control" />
+                <span asp-validation-for="SitoWeb" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
